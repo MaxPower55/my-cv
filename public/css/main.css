@@ -1,0 +1,131 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --header-bg-color: rgba(34, 34, 34, 0.95);
+  --txt-color: #ddb;
+  --txt-color-hover: #fff;
+  --header-shadow: rgba(221, 221, 187, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+html {
+  min-height: 100vh;
+}
+
+.body {
+  background: linear-gradient(90deg, rgb(112, 111, 116) 0% 65%, rgb(65, 149, 197) 65% 100%);
+}
+
+.header {
+  background: var(--header-bg-color);
+  background-blend-mode: darken;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 10px 1px var(--header-shadow);
+  box-shadow: 0px 0px 10px 1px var(--header-shadow);
+}
+
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 80vw;
+  padding: 20px;
+}
+
+.header__logo img {
+  max-height: 70px;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.nav__list li {
+  list-style: none;
+}
+
+.link {
+  font: larger/4 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--txt-color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--txt-color-hover);
+}
+
+@media screen and (max-width: 1024px) {
+  .header__wrapper {
+    width: 100vw;
+  }
+
+  .link {
+    color: var(--txt-color);
+    font-size: medium;
+    line-height: 3;
+  }
+
+  .header__logo img {
+    max-height: 50px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .link {
+    font-size: small;
+    line-height: 0;
+  }
+
+  .header__logo img {
+    -webkit-transform: rotateZ(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotateZ(270deg);
+    max-height: 50px;
+  }
+}
